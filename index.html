@@ -4,119 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Home Page</title>
-    <style>
-        body {
-            font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
-            font-size: 16px;
-            color: #293a43;
-            background-color: #5e70cb;
-            background-image: url('skynight.jpg');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-        }
-
-        #box {
-            width: 700px;
-            padding: 25px;
-            margin: 0 auto;
-            background-color: rgb(255, 251, 251,0.6);
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            color: #000000;
-            border-bottom: 3px solid #244b9f;
-            padding-bottom: 10px;
-        }
-
-        h2 {
-            color: #53158a;
-            margin-top: 30px;
-        }
-
-        a {
-            color: #d67b0c;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        ul {
-            line-height: 1.6;
-        }
-
-        .bio-section {
-            background-color: #c7cacd;
-            padding: 15px;
-            border-left: 5px solid #aed3cd;
-            margin: 20px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div id="box">
-        <header>
-            <h1>Welcome to My Web</h1>
-        </header>
+<body class="index-page">
+<div id="container">
 
-        <section>
-            <h2>Page</h2>
-            <ul>
-                <li><strong>Home Page</strong> 
-                <li><a href="week2-cc-licenses.html">Semantic Tag</a> 
-                <li><a href="#">Emulate the layout provided </a> 
-                <li><a href="#">Create a two-column layout </a> 
-                <li><a href="#">Scannable text with original typography </a>
-                <li><a href="#">Create a three-column layout </a>
-                <li><a href="#">Robot uprising </a> 
-                <li><a href="#">Big Red Dot </a> 
-                <li><a href="#">Excelsior Designs </a>
+    <header>
+        <h1>Welcome to My Web</h1>
+    </header>
+
+    <nav>
+        <a href="week2-cc-licenses.html">Semantic Tag</a>
+        <a href="#">Emulate the layout provided</a>
+        <a href="#">Create a two-column layout</a>
+        <a href="#">Scannable text with original typography</a>
+        <a href="#">Create a three-column layout</a>
+        <a href="#">Robot uprising</a>
+        <a href="#">Big Red Dot</a>
+        <a href="#">Excelsior Designs</a>
+    </nav>
+
+    <div id="sidebar">
+        <div class="purplebox">
+            <h3>My Favorite Websites</h3>
+            <ul style="color:#fff;">
+                <li><a href="https://stevencai.hotglue.me/" target="_blank">Stevencai</a> - My personal Web</li>
+                <li><a href="https://www.bilibili.com/" target="_blank">bilibili</a> - Chinese video platform.</li>
             </ul>
-        </section>
+        </div>
 
-        <section>
-            <h2>Who am I</h2>
-            
-            <div class="bio-section">
-                <h3>Intro</h3>
-                <p>Hello! I'm a student in MEDIACOM Study. Welcome to my first page. </p>
-            </div>
+        <div class="purplebox">
+            <h3>Fandoms & Interests</h3>
+            <p>Do you love one of these?</p>
+            <ul style="color:#fff;">
+                <li><strong>Movies:</strong> Ghost in the Shell, Akira.</li>
+                <li><strong>Music:</strong> Classic, Japanese pop, OST.</li>
+                <li><strong>Sports:</strong> Racing, Hiking.</li>
+            </ul>
+        </div>
 
-            <div>
-                <h3>My Favorite Websites</h3>
-                <ul>                    
-                    <li><a href="https://stevencai.hotglue.me/" target="_blank">Stevencai</a> - My personal Web</li>
-                    <li><a href="https://www.bilibili.com/" target="_blank">bilibili</a> - Chinese video platform.</li>
-                </ul>
-            </div>
-
-            <div>
-                <h3>Fandoms &amp; Interests</h3>
-                <p>Do you love one of these?</p>
-                <ul>
-                    <li><strong>Movies:</strong> Ghost in the Shell, Akira, Blade runner</li>
-                    <li><strong>Music:</strong>  Classic, Japanese pop, OST.</li>
-                    <li><strong>Sports:</strong> Racing, Hiking.</li>
-                </ul>
-            </div>
-
-            <div>
-                <h3>Take a look of some photo</h3>
-                <p>beautiful day</p>
-                <img src="niceday.jpg" style="width:100%; max-width:100%; height:auto; border-radius:10px; margin:10px 0;">
-        </section>
-
-        <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; font-size: 0.9em; color: #777;">
-            <p>Last updated: <span id="current-date"></span>.</p>
-        </footer>
+        <div class="purplebox">
+            <h3>About Me</h3>
+            <p>Hello! I'm a student in MEDIACOM Study. Welcome to my first page.</p>
+        </div>
     </div>
 
-    <script>
-        document.getElementById('current-date').textContent = new Date().toLocaleDateString();
-    </script>
+    <main>
+        <div id="content">
+            <h2>Take a look of some photo</h2>
+            <p>beautiful day</p>
+            <img src="niceday.jpg" alt="Beautiful day photo">
+            
+            <div class="bio-section">
+                <h3>More About Me</h3>
+                <p>Hello! I'm a student in MEDIACOM Study. Welcome to my first page. This page demonstrates a two-column layout with semantic HTML elements and clean typography.</p>
+                
+                <h3>My Interests</h3>
+                <p>In addition to what's listed in the sidebar, I also enjoy:</p>
+                <ul>
+                    <li>Photography</li>
+                    <li>Travelling</li>
+                    <li>Vider Game</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My WebPage. All rights reserved.</p>
+    </footer>
+</div>
 </body>
 </html>
