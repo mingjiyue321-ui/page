@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excelsior Designs – Home</title>
+    <!-- Embedded Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            background: #f4f7fb;
+            color: #1e2b3a;
+            line-height: 1.5;
+        }
+        /* Fixed container – 1000px fits 1024px screens with a little breathing room */
+        #container {
+            width: 1000px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        /* Header */
+        header {
+            background: #1e2b3a;
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+        .header-content h1 {
+            font-weight: 700;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+        /* Persistent navigation with dropdown */
+        nav {
+            background: #2c3e50;
+            padding: 0.5rem 2rem;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        nav ul li {
+            position: relative; /* for dropdown */
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 0.5rem 0;
+            display: inline-block;
+        }
+        nav ul li a:hover {
+            border-bottom: 2px solid #e67e22;
+        }
+        /* Dropdown menu */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #34495e;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 10;
+            border-radius: 0 0 8px 8px;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 0.75rem 1rem;
+            display: block;
+            text-align: left;
+            border-bottom: 1px solid #3d566e;
+        }
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+        .dropdown-content a:hover {
+            background: #e67e22;
+        }
+        nav ul li:hover .dropdown-content {
+            display: block;
+        }
+        /* Three-column section */
+        .row {
+            display: flex;
+            gap: 20px;
+            padding: 2rem;
+        }
+        .column {
+            flex: 1;
+        }
+        .left-col, .right-col {
+            background: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        .middle-col {
+            background: white;
+            padding: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        /* Artwork images */
+        .artwork {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin: 1rem 0;
+            border: 1px solid #ccc;
+        }
+        /* Footer */
+        footer {
+            background: #1e2b3a;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+        /* Typography */
+        h2, h3 {
+            color: #2c3e50;
+            margin-bottom: 0.75rem;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        /* Responsive fallback – keeps fixed width */
+        @media (max-width: 1024px) {
+            body {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+
+    <header>
+        <div class="header-content">
+            <!-- Logo as artwork – decorative, but alt provided -->
+            <img src="https://picsum.photos/80/80?random=1" alt="Excelsior Designs diamond logo" style="border-radius:50%; margin-bottom:10px;">
+            <h1>Excelsior Designs</h1> 
+        </div>
+    </header>
+
+    <!-- Persistent nav with dropdowns -->
+    <nav>
+        <ul>
+            <li><a href="index2.html">Home</a></li>
+            <!-- Dropdown for Design Areas (5 section landing pages) -->
+            <li>
+                <a href="#">Design Areas</a>
+                <div class="dropdown-content">
+                    <a href="graphic-design.html">Graphic Design</a>
+                    <a href="interior-design.html">Interior Design</a>
+                    <a href="product-design.html">Product Design</a>
+                    <a href="digital-design.html">Digital Design</a>
+                    <a href="architectural-design.html">Architectural Design</a>
+                </div>
+            </li>
+            <!-- Optional second dropdown for portfolio (subsections) -->
+
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Three-column layout -->
+    <div class="row">
+        <!-- Left column -->
+        <div class="column left-col">
+            <h3>What We Do</h3>
+            <img src="https://picsum.photos/250/150?random=2" alt="Abstract design sketch" class="artwork">
+            
+            <ul>
+                <li>take photo</li>
+                <li>video</li>
+                <li>music</li>
+            </ul>
+        </div>
+
+        <!-- Middle column (main content) -->
+        <div class="column middle-col">
+            <h2>Welcome to Excelsior Designs</h2>
+            <img src="https://picsum.photos/500/250?random=3" alt="Modern design studio workspace" class="artwork">
+            
+            <h3>Our Philosophy</h3>
+            <p>Hard work pays off.</p>
+        </div>
+
+        <!-- Right column -->
+        <div class="column right-col">
+            <h3>Recent News</h3>
+            <img src="https://picsum.photos/250/150?random=4" alt="Design award trophy" class="artwork">
+            <p><strong>New office opening</strong><br>new place</p>
+            <p><a href="contact.html" style="color:#e67e22;">Contact us →</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Excelsior Designs. All rights reserved. | <a href="#" style="color:#e67e22;">Privacy</a> | <a href="#" style="color:#e67e22;">Terms</a></p>
+        <p>All images from Picsum </p>
+    </footer>
+
+</div>
+</body>
+</html>
