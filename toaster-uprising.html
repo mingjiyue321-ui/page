@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Robot Uprising Industries</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Gugi|Roboto+Slab" rel="stylesheet">
+    <style>
+        html { font-size: 62.5%; }
+
+        body {
+            font-family: 'Roboto Slab', Verdana, sans-serif;
+            font-size: 1.65rem;
+            background-color: #F2EFE8;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Gugi', Courier, 'Courier New', monospace;
+        }
+        h2, h3, h4 {
+            color: darkorange;
+        }
+
+        header {
+            height: 150px;
+            padding: 0;
+            background-color: #958852;
+            background-image: url(images/toaster-topgradient.png);
+            background-repeat: repeat-x;
+        }
+        header h1 {
+            font-size: 3.5rem;
+            padding-top: 70px;
+            padding-left: 290px;
+            margin: 0;
+        }
+        header #logo {
+            background-image: url(images/toaster2.png);
+            background-repeat: no-repeat;
+            height: 150px;
+            width: 141px;
+            float: left;
+        }
+        header #logo:hover {
+            background-image: url(images/toaster2-roll.png);
+            background-repeat: no-repeat;
+        }
+
+        footer {
+            margin: 0;
+            color: #FFF;
+            background-color: #958852;
+            padding-left: 290px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            clear: both;
+        }
+        footer a {
+            color: #FFF;
+            text-decoration: none;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        nav {
+            height: 50px;
+            background-image: url(images/toaster-curved.png);
+            background-repeat: no-repeat;
+            background-position: top right;
+            padding-left: 290px;
+            padding-top: 10px;
+        }
+        nav a {
+            font-size: 1.4rem;
+            width: 75px;
+            height: 25px;
+            padding: 10px;
+            text-align: center;
+            font-family: 'Gugi', Courier, 'Courier New', monospace;
+            color: #FFF;
+            background-color: darkorange;
+            border: 1px dotted #FFF;
+            margin-right: 7px;
+            text-decoration: none;
+            display: inline-block;      /* 使宽度/高度生效 */
+            line-height: 25px;          /* 垂直居中 */
+        }
+        nav a:hover {
+            background-color: #FFF;
+            background-image: url(images/flames5.png);
+            background-repeat: repeat-x;
+            background-position: bottom;
+            border: 1px solid darkorange;
+            color: #000;
+            font-weight: bolder;
+        }
+
+        #container {
+            background-image: url(images/toaster-sidegradient.jpg);
+            background-repeat: repeat-y;
+            padding: 0;
+            width: 980px;
+            margin: 0 auto;
+            border: 2px solid #958852;
+        }
+
+        #sidebar {
+            padding: 25px;
+            float: left;
+            width: 220px;
+        }
+        #sidebar a {
+            font-size: 1.3rem;
+            color: #000;
+            background-color: #F2EFE8;
+            width: 175px;
+            padding: 5px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 15px;        /* 圆角按钮 */
+            display: block;              /* 块级链接 */
+        }
+        #sidebar a:hover {
+            background-color: darkorange;
+            color: black;
+        }
+        #sidebar h3 {
+            background-color: #F2EFE8;
+            border-top: 5px solid #000;
+            padding: 10px;
+            border-radius: 15px 5px;    /* 不同圆角 */
+        }
+
+        #content {
+            padding: 10px 25px 25px 25px;
+            margin-left: 270px;
+        }
+
+        .floatleft {
+            float: left;
+            margin-right: 15px;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+
+    <header>
+        <div id="logo">
+            <a href="#home"><img src="toaster2.png" alt="Toaster Uprising Industries logo" width="141" height="150"></a>
+        </div>
+        <h1>Toaster Uprising Industries</h1>
+    </header>
+
+    <nav>
+        <a href="#">Thunderbots</a>
+        <a href="#">Destructobots</a>
+        <a href="#">Phones</a>
+        <a href="#">Toasters</a>
+        <a href="#">About Us</a>
+    </nav>
+
+    <div id="sidebar">
+        <aside>
+            <h3>Related Articles or Local Nav here</h3>
+            <p><a href="#">Button 1</a></p>
+            <p><a href="#">The second link</a></p>
+            <p><a href="#">This is weird</a></p>
+            <p><a href="#">Wait, what?</a></p>
+        </aside>
+    </div>
+
+    <main>
+        <div id="content">
+            <article>
+                <h2>Main Header</h2>
+                <h3>Header 3</h3>
+                <p>Donec eu mi sed turpis feugiat feugiat. Integer turpis arcu, pellentesque eget, cursus et, fermentum ut, sapien. Fusce metus mi, eleifend sollicitudin, molestie id, varius et, nibh. Donec nec libero.</p>
+                <ul>
+                    <li>Donec eu mi sed turpis feugiat feugiat.</li>
+                    <li>Integer turpis arcu</li>
+                    <li>Pellentesque eget, cursus et,</li>
+                    <li>Fermentum ut, sapien.</li>
+                </ul>
+                <p>Fusce metus mi, eleifend sollicitudin, molestie id, varius et, nibh. Donec nec libero.</p>
+                <h3>Header 3</h3>
+                <p>Integer turpis arcu, pellentesque eget, cursus et, fermentum ut, sapien. Fusce metus mi, eleifend sollicitudin, molestie id, varius et, nibh. Donec nec libero. Donec eu mi sed turpis feugiat feugiat. Integer turpis arcu, pellentesque eget, cursus et, fermentum ut, sapien.</p>
+                <h3>Header 3</h3>
+                <p>Integer turpis arcu, pellentesque eget, cursus et, fermentum ut, sapien. Fusce metus mi, eleifend sollicitudin, molestie id, varius et, nibh. Donec nec libero.</p>
+                <p>Donec eu mi sed turpis feugiat feugiat. Integer turpis arcu, pellentesque eget, cursus et, fermentum ut, sapien.</p>
+                <ul>
+                    <li>Donec eu mi sed turpis feugiat feugiat.</li>
+                    <li>Integer turpis arcu</li>
+                    <li>Pellentesque eget, cursus et,</li>
+                    <li>Fermentum ut, sapien.</li>
+                </ul>
+                <h3>Header 3</h3>
+                <p>Integer turpis arcu, pellentesque eget, cursus et, fermentum ut, sapien. Fusce metus mi, eleifend sollicitudin, molestie id, varius et, nibh. Donec nec libero. Donec eu mi sed turpis feugiat feugiat. Fusce metus mi, eleifend sollicitudin, molestie id, varius et, nibh. Donec nec libero. Donec eu mi sed turpis feugiat feugiat.</p>
+                <ul>
+                    <li>Integer turpis arcu</li>
+                    <li>Pellentesque eget</li>
+                    <li>Cursus.</li>
+                </ul>
+                <h3>Header 3</h3>
+                <p>Integer turpis arcu, pellentesque eget, cursus et, fermentum ut, sapien. Fusce metus mi, eleifend sollicitudin, molestie id, varius et, nibh. Donec nec libero. Donec eu mi sed turpis feugiat feugiat. Fusce metus mi, eleifend sollicitudin, molestie id, varius et, nibh. Donec nec libero. Donec eu mi sed turpis feugiat feugiat.</p>
+                <h2>&nbsp;</h2>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p><a href="#">Home</a> | <a href="#">Thunderbots</a> | <a href="#">Destructobots</a> | <a href="#">Phones</a> | <a href="#">Toasters</a> | <a href="#">About Us</a></p>
+        <p><a href="#">Contact Us</a> | <a href="#">Site Map</a> | <a href="#">Terms of Use</a> | <a href="#">Kill All Humans</a></p>
+    </footer>
+</div>
+</body>
+</html>

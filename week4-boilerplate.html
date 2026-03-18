@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three-Column Fluid Layout · English</title>
+    <!-- Link to original styles.css to keep the same design language -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts: Lora (serif) + Barlow Condensed (sans) for a fresh English typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* Page-specific adjustments – keep the same visual identity, only content changed to English */
+        body {
+            background-image: url('skynight.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: 'Lora', 'Times New Roman', serif;
+        }
+
+        /* Fluid container: same percentages and constraints */
+        #container {
+            width: 78%;                    /* between 70% and 80% */
+            max-width: 1260px;
+            min-width: 780px;
+            margin: 20px auto;
+            background-color: #a4a2a2;
+            border: 2px solid #666;
+            border-radius: 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .site-logo {
+            height: 60px;
+            width: auto;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 20px;
+        }
+
+        nav a {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Three‑column grid (percent based) */
+        .three-col-grid {
+            display: grid;
+            grid-template-columns: 20% 1fr 20%;   /* left 20%, middle auto (≈60% after padding), right 20% */
+            gap: 0;
+            padding: 20px 15px;
+            background-color: #9e9898;
+        }
+
+        .three-col-grid > div {
+            padding: 0 15px;
+        }
+
+        .left-col .purplebox,
+        .right-col .purplebox {
+            margin-bottom: 20px;
+        }
+
+        .middle-col {
+            background-color: #9e9898;
+            border-radius: 5px;
+            padding: 15px 18px !important;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3), 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .middle-col h2 {
+            color: #336;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 28px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #c79f4b;
+            padding-bottom: 5px;
+        }
+
+        .middle-col h3 {
+            color: #53158a;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 22px;
+            margin: 20px 0 10px;
+        }
+
+        .middle-col p {
+            margin-bottom: 18px;
+            line-height: 1.7;
+        }
+
+        .middle-col a {
+            color: #d67b0c;
+            text-decoration: underline;
+        }
+
+        .middle-col a:hover {
+            color: #b35f00;
+        }
+
+        .middle-col img.content-img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 2px solid #eee;
+        }
+
+        /* Responsive: stack columns on narrow screens */
+        @media (max-width: 900px) {
+            #container {
+                min-width: 300px;
+                width: 95%;
+            }
+            .three-col-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .left-col, .middle-col, .right-col {
+                padding: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+
+    <!-- Header: logo.png (updated from logo.jpg) -->
+    <header>
+        <div class="header-content">
+            <img src="logo.png" alt="My Logo" class="site-logo">
+            <h1>Three-Column · Fluid Layout</h1>
+        </div>
+    </header>
+
+    <!-- Navigation (with English labels and link back to index) -->
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="week2-cc-licenses.html">CC License</a>
+        <a href="#">Emulate layout</a>
+        <a href="text.html">Robinson Crusoe</a>
+        <a href="#" style="background-color: #555;">Three‑col (current)</a>
+        <a href="#">Robot uprising</a>
+        <a href="#">Big Red Dot</a>
+        <a href="#">Excelsior</a>
+    </nav>
+
+    <!-- Three‑column core area -->
+    <div class="three-col-grid">
+        <!-- LEFT COLUMN (purple boxes) -->
+        <div class="left-col">
+            <div class="purplebox">
+                <h3>📌 Fluid Design Specs</h3>
+                <ul style="color:#fff;">
+                    <li>Container width: 78%</li>
+                    <li>max-width: 1260px</li>
+                    <li>min-width: 780px</li>
+                    <li>Columns: 20% / 60% / 20% (approx.)</li>
+                    <li>Fonts: Lora + Barlow Condensed</li>
+                </ul>
+            </div>
+            <div class="purplebox">
+                <h3>🎨 Images & Background</h3>
+                <p style="color:#fff;">Background: <strong>skynight.jpg</strong><br>
+                Main image: <strong>niceday.jpg</strong> (see middle column)<br>
+                Logo: <strong>logo.png</strong></p>
+            </div>
+            <div class="purplebox">
+                <h3>🔗 Quick Links</h3>
+                <ul style="color:#fff;">
+                    <li><a href="index.html" style="color:#fff;">← Back to index.html</a></li>
+                    <li><a href="https://fonts.google.com/specimen/Lora" target="_blank" style="color:#fff;">Lora on Google Fonts</a></li>
+                    <li><a href="https://fonts.google.com/specimen/Barlow+Condensed" target="_blank" style="color:#fff;">Barlow Condensed</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- MIDDLE COLUMN (main article, includes niceday.jpg) -->
+        <div class="middle-col">
+            <h2>Fluid Three‑Column Layout<br><span style="font-size: 1.6rem; color: #5f4c3b;">with embedded typography</span></h2>
+            <p>This exercise converts a fixed-width design into a <strong>fluid percentage-based layout</strong>. The container is set to <code>width: 78%</code>, capped with <code>max-width: 1260px</code> and <code>min-width: 780px</code> to maintain readability on very large or small screens. The three columns use a grid of roughly 20% / 60% / 20% (via <code>20% 1fr 20%</code> plus internal padding).</p>
+
+            <!-- niceday.jpg image (same as in index) -->
+            <img src="niceday.jpg" alt="Beautiful day – niceday.jpg" class="content-img">
+
+            <h3>About the imagery</h3>
+            <p>The photo above is <strong>niceday.jpg</strong>, placed in the middle column. All image paths are consistent with the original <code>index.html</code>. The background remains <code>skynight.jpg</code> to preserve the unified visual style.</p>
+
+            <p>This page includes a link back to the <a href="index.html">homepage (index.html)</a> in the navigation and left column. The typefaces are <a href="#" style="text-decoration: underline;">Google Fonts</a> <strong>Lora</strong> for body text and <strong>Barlow Condensed</strong> for headings – a distinct yet elegant pair that differs from the original Gill Sans / Verdana while keeping the same aesthetic.</p>
+
+            <blockquote style="border-left: 5px solid #c79f4b; background: #ece5d8; padding: 12px 20px; margin: 20px 0; font-style: italic;">
+                “Design is not just what it looks like and feels like. Design is how it works.” — This layout demonstrates both.
+            </blockquote>
+
+            <p>More sample links: <a href="#">example link one</a>, <a href="#">example link two</a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid" target="_blank">MDN grid documentation</a>. All links retain the original orange‑brown accent (<span style="color:#d67b0c;">#d67b0c</span>).</p>
+        </div>
+
+        <!-- RIGHT COLUMN (purple boxes) -->
+        <div class="right-col">
+            <div class="purplebox">
+                <h3>📐 Percentage Breakdown</h3>
+                <p style="color:#fff;">Left and right columns are set to 20% each; the middle column uses <code>1fr</code>, which together with padding gives a visual ~60% width. No <code>gap</code> is used – spacing comes from padding.</p>
+            </div>
+            <div class="purplebox">
+                <h3>🖼️ Fake Logos & Art</h3>
+                <p style="color:#fff;">The header now uses <code>logo.png</code> (replaces logo.jpg). For inspiration: the Flickr group “Fake Logos” and royalty‑free images on Pexels.</p>
+                <ul style="color:#fff;">
+                    <li><a href="https://www.flickr.com/groups/fakelogos/" target="_blank" style="color:#fff;">Flickr fake logos</a></li>
+                    <li><a href="https://www.pexels.com/" target="_blank" style="color:#fff;">Pexels</a></li>
+                </ul>
+            </div>
+            <div class="purplebox">
+                <h3>⭐ Background Texture</h3>
+                <p style="color:#fff;">Besides <code>skynight.jpg</code>, you can explore DinPattern for seamless patterns. This page keeps the starry sky fixed for a calm reading environment.</p>
+            </div>
+            <div class="purplebox">
+                <h3>📎 Page Links</h3>
+                <ul style="color:#fff;">
+                    <li><a href="index.html" style="color:#fff;">Return to index.html</a></li>
+                    <li><a href="week2-cc-licenses.html" style="color:#fff;">CC Licenses page</a></li>
+                    <li><a href="text.html" style="color:#fff;">Robinson Crusoe excerpt</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+</body>
+</html>

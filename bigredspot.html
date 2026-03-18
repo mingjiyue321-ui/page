@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>big red dot · liquid design</title>
+    <style>
+        /* === bredot.css – 完全基于百分比，液态布局 === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;  /* 让内边距和边框不影响百分比宽度 */
+        }
+
+        body {
+            /* 大背景图 – 全屏覆盖，固定不动 */
+            background: url('large-bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            color: #1e1e1e;
+        }
+
+        /* 主容器：宽度90%，最大1200px，居中 */
+        #container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 1.5rem auto 0;
+        }
+
+        /* 页眉 —— 大红烤面包机 */
+        header {
+            text-align: center;
+            padding: 0.5rem 0 0.2rem;
+        }
+
+        #logo img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            transition: opacity 0.2s ease;
+        }
+
+        /* 简单的悬停效果（模拟rollover：变淡/变亮） */
+        #logo a:hover img {
+            opacity: 0.8;
+        }
+
+        /* 导航 —— 大红风格 */
+        nav {
+            text-align: center;
+            padding: 0.8rem 0;
+            margin: 0 0 1.5rem 0;
+            background: rgba(180, 0, 0, 0.75);      /* 半透明红底 */
+            border-radius: 40px;
+            backdrop-filter: blur(2px);              /* 轻微毛玻璃 (现代浏览器) */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 0.4rem 1.2rem;
+            margin: 0 0.2rem;
+            display: inline-block;
+            border-radius: 30px;
+            transition: 0.15s;
+        }
+
+        nav a:hover {
+            background: #ffffff;
+            color: #b30000;
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.6);
+        }
+
+        /* ===== 关键：额外 div (inside-container) 做半透明白色背景层 ===== */
+        #inside-container {
+            background-color: rgba(255, 255, 255, 0.75);  /* 半透明白，alpha=0.75 */
+            border-radius: 32px;
+            padding: 1.8rem 2rem;                         /* 内部留白，让内容透气 */
+            overflow: hidden;                              /* 清除内部浮动 (不需要额外<br>) */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(3px);                    /* 与背景融合，更柔和 */
+        }
+
+        /* 三栏 —— 全部浮动 + 百分比宽度 + 盒模型内边距 */
+        #sidebar1 {
+            float: left;
+            width: 20%;                 /* 左栏20% */
+            padding: 0 1rem 0 0;        /* 右侧留白，与中间隔开 */
+        }
+
+        #sidebar2 {
+            float: left;
+            width: 25%;                 /* 右栏25% */
+            padding: 0 0 0 1rem;        /* 左侧留白 */
+        }
+
+        #content {
+            float: left;
+            width: 55%;                 /* 主内容55% → 20+25+55=100% */
+            padding: 0 1.2rem;           /* 左右都有呼吸空间 */
+        }
+
+        /* 内部排版 */
+        #sidebar1 p, #sidebar2 p, #content p {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        h1, h2, h3 {
+            color: #aa0000;              /* 大红标题 */
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.75rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            border-left: 6px solid #b30000;
+            padding-left: 1rem;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            border-bottom: 2px dashed #b30000;
+            padding-bottom: 0.2rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: #8b0000;
+        }
+
+        /* 侧边栏链接风格 */
+        #sidebar1 a, #sidebar2 a {
+            color: #b30000;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #b30000;
+        }
+
+        #sidebar1 a:hover, #sidebar2 a:hover {
+            color: #500000;
+            border-bottom: 1px solid #500000;
+        }
+
+        #sidebar1 p {
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        /* 移除额外浮动清除<br>的干扰，我们用overflow: hidden已经清除 */
+        .clearfloat {
+            display: none;   /* 原有<br>不再需要，但保留也不碍事 */
+        }
+
+        /* ===== FOOTER – 全幅半透明黑红风格 ===== */
+        footer {
+            width: 100%;
+            background: rgba(30, 0, 0, 0.8);        /* 深红半透明 */
+            backdrop-filter: blur(4px);
+            margin-top: 2.5rem;
+            padding: 2rem 0 1.8rem;
+            text-align: center;
+            border-top: 4px solid #b30000;
+            color: #f0d5d5;
+        }
+
+        /* 让footer里的内容也限制宽度，与container对齐（视觉舒适） */
+        footer p {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0.5rem auto;
+        }
+
+        footer a {
+            color: #ffb3b3;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.15s;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+            text-decoration: underline wavy #ff4d4d;
+        }
+
+        /* 返回顶部的特殊按钮 */
+        footer .top a {
+            display: inline-block;
+            background: #b30000;
+            color: white;
+            padding: 0.5rem 2rem;
+            border-radius: 60px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            border: 1px solid #ffb3b3;
+            box-shadow: 0 2px 10px rgba(180, 0, 0, 0.5);
+            margin-bottom: 1.5rem;
+        }
+
+        footer .top a:hover {
+            background: #800000;
+            border-color: white;
+            text-decoration: none;
+            transform: scale(1.02);
+        }
+
+        /* 分隔符 | 自然保留 */
+        footer p:last-child a {
+            margin: 0 8px;
+        }
+
+        /* 自适应小屏：让三栏自动堆叠 (依然保持液态) */
+        @media screen and (max-width: 750px) {
+            #sidebar1, #sidebar2, #content {
+                width: 100%;
+                float: none;
+                padding: 1rem 0 !important;
+            }
+
+            #inside-container {
+                padding: 1.5rem;
+            }
+
+            nav a {
+                display: inline-block;
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* 微调图片署名 */
+        #content p:last-of-type a {
+            color: #a00000;
+            font-style: italic;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 2px 6px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 修正后的HTML结构 —— 包含一个额外的#inside-container作为半透明背景层 -->
+    <div id="container">
+
+        <!-- 页眉：给header加上id="header" 以便页脚“back to top”跳转 -->
+        <header id="header">
+            <div id="logo">
+                <!-- 假设toaster-zero.png在images/文件夹，360x360 -->
+                <img src="breddot.png" alt="big red dot" width="360" height="360">
+            </div>
+        </header>
+
+        <!-- 大红导航栏 -->
+        <nav>
+            <a href="#space">space travel</a>
+            <a href="#nars">mars expeditions</a>
+            <a href="#terra">terraforming</a>
+            <a href="#bookings">bookings</a>
+            <a href="#about">about us</a>
+            <a href="#contact">contact us</a>
+        </nav>
+
+        <!-- 额外的div —— 半透明白色背景层包裹所有内容列 -->
+        <div id="inside-container">
+
+            <!-- 左侧边栏 #sidebar1 -->
+            <div id="sidebar1">
+                <p><a href="#1">🔴 local</a></p>
+                <p><a href="#2">🔴 local</a></p>
+                <p><a href="#3">🔴 local</a></p>
+                <p><a href="#4">🔴 local</a></p>
+                <!-- 原本多余内容可保留，也可以加一点装饰 -->
+                <p style="margin-top:2rem; font-size:0.85rem;">⋆⍟⋆ red dot ⋆⍟⋆</p>
+            </div>
+
+            <!-- 右侧边栏 #sidebar2 (原示例文本) -->
+            <div id="sidebar2">
+                <h3>Sidebar2 · mars dust</h3>
+                <p>The background color on this div will only show for the length of the content. If you'd like a dividing line instead, place a border on the right side of the #mainContent div...</p>
+                <p>Donec eu mi sed turpis feugiat feugiat. Integer turpis arcu, pellentesque eget, cursus et, fermentum ut, sapien.</p>
+            </div>
+
+            <!-- 主内容区域 #content -->
+            <div id="content">
+                <h1>Header · big red horizon</h1>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent aliquam, justo convallis luctus rutrum, erat nulla fermentum diam, at nonummy quam ante ac quam. Maecenas urna purus, fermentum id, molestie in, commodo porttitor, felis. Nam blandit quam ut lacus. Quisque ornare risus quis ligula. Phasellus tristique purus a augue condimentum adipiscing. Aenean sagittis. Etiam leo pede, rhoncus venenatis, tristique in, vulputate at, odio. Donec et ipsum et sapien vehicula nonummy. Suspendisse potenti.</p>
+                <h2>H2 · terraforming protocols</h2>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent aliquam, justo convallis luctus rutrum, erat nulla fermentum diam, at nonummy quam ante ac quam. Maecenas urna purus, fermentum id, molestie in, commodo porttitor, felis. Nam blandit quam ut lacus. Quisque ornare risus quis ligula. Phasellus tristique purus a augue condimentum adipiscing. Aenean sagittis. Etiam leo pede, rhoncus venenatis, tristique in, vulputate at, odio.</p>
+                <p>Background image by <a href="http://www.flickr.com/photos/jmmpereda/" target="_blank">José Miguel</a> (flickr)</p>
+            </div>
+
+            <!-- 传统清除浮动的<br>，但我们已经用overflow:hidden清除，所以隐藏它视觉上不影响 -->
+            <br class="clearfloat" style="clear:both; display:none;">
+        </div>
+        <!-- end #inside-container -->
+    </div>
+    <!-- end #container -->
+
+    <!-- footer 全幅半透明，独立于container，但内容居中 -->
+    <footer>
+        <p class="top"><a href="#header">⬆ back to top</a></p>
+        <p>
+            <a href="#space">space travel</a> | <a href="#nars">mars expeditions</a> | <a href="#terra">terraforming</a> | <a href="#bookings">bookings</a> | <a href="#about">about us</a> | <a href="#contact">contact us</a>
+        </p>
+        <p style="color:#ffaaaa; font-size:0.85rem; margin-top:1rem;">✨ big red dot · liquid design ✨</p>
+    </footer>
+
+    <!-- 说明：图片 large-bg.jpg 和 toaster-zero.png 请放置在 images/ 文件夹下 -->
+</body>
+</html>
